@@ -85,10 +85,28 @@ def download_sub():
                     }
             return (json.dumps(r))
     except Exception as e:
-        pass
+        error = (f"Error detected on filmvision download server ::: {e}")
+        
+        h = {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Apikey eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1Yzc5NjAyMC1hNTM5LTExZWMtYjhhYy04Zjk2YjExMDNmYzkiLCJzdWIiOiJTSE9VVE9VVF9BUElfVVNFUiIsImlhdCI6MTY0NzQ0MjYzMiwiZXhwIjoxOTYzMDYxODMyLCJzY29wZXMiOnsiYWN0aXZpdGllcyI6WyJyZWFkIiwid3JpdGUiXSwibWVzc2FnZXMiOlsicmVhZCIsIndyaXRlIl0sImNvbnRhY3RzIjpbInJlYWQiLCJ3cml0ZSJdfSwic29fdXNlcl9pZCI6IjY2MDE5Iiwic29fdXNlcl9yb2xlIjoidXNlciIsInNvX3Byb2ZpbGUiOiJhbGwiLCJzb191c2VyX25hbWUiOiIiLCJzb19hcGlrZXkiOiJub25lIn0.nwgRCXa-tQ6s9L-n6QRjFlfqR11UPjIj3Solr43Weck'
+        }
+        
+        d = {
+            "source": "ShoutDEMO",
+            "destinations": [
+                "94751354842"
+            ],
+            "transports": [
+                "sms"
+            ],
+            "content": {
+                "sms": error
+            }
+        }
+        r = requests.post('https://api.getshoutout.com/coreservice/messages', data= json.dumps(d) ,headers = h)
   
-  
-@app.route('/crash-report',methods=['POST'])
   
   
 if __name__ == '__main__':
