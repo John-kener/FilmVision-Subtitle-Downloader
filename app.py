@@ -87,7 +87,7 @@ def download_sub():
   
   		return (json.dumps(r))
   except:
-    pass
+      
 if __name__ == '__main__':
 	app.run(debug=True)
 
