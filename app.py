@@ -14,6 +14,14 @@ def download_sub():
 	global token
 	req = request.form.to_dict()
 	id = str(req['id'])
+	try:
+	  fname = str(req['filename'])
+	except Exception, e:
+	  pass
+	try:
+	  language = str(req['language'])
+	except Exception, e:
+    pass
 
 	# API LIST
 	api_list= ['8N3cWyJvYvWL5KDLxt0aKzu4vhNkUCnr','1J8MVetljab3wYO4ancDmuk0We1RieMB']
