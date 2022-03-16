@@ -21,7 +21,7 @@ def download_sub():
 	try:
 	  language = str(req['language'])
 	except Exception, e:
-    pass
+    language = 'en'
 
 	# API LIST
 	api_list= ['8N3cWyJvYvWL5KDLxt0aKzu4vhNkUCnr','1J8MVetljab3wYO4ancDmuk0We1RieMB']
