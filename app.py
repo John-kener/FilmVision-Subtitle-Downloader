@@ -84,10 +84,11 @@ def download_sub():
                         'response' : download_response.status_code
                     }
             return (json.dumps(r))
-    except:
+    except Exception as e:
         pass
   
   
+@app.route('/crash-report',methods=['POST'])
   
   
 if __name__ == '__main__':
