@@ -16,7 +16,7 @@ def download_sub():
         id = str(req['id'])
         try:
             fname = str(req['filename'])
-        except Exception, e:
+        except :
             pass
         try:
             language = str(req['language'])
